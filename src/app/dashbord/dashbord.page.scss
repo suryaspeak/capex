@@ -1,0 +1,116 @@
+ion-card{
+    margin: 0px;
+    height: 64px;
+
+
+}
+
+.effect{
+  height: 100%;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(to bottom, #fefcea 0%,#f1da36 100%);
+
+
+    padding-left: 13px;
+    padding-right: 13px;
+    color: black;
+}
+.effect::before{
+    content: "";
+    border-style: solid;
+    border-width: 19px 15px 0 0;
+
+    border-color: #FFD801 transparent transparent transparent;
+    position: absolute;
+    left: 0;
+}
+
+.wrap {
+
+}
+.value {
+  font-size: 12px;
+    font-weight: 600;
+    color: #333333;
+    padding-top: 3px;
+}
+
+
+.text {
+    font-size: 13px;
+}
+
+img{
+    height: 115px;
+    height: 89px;
+    object-fit: contain;
+    padding: 12px;
+}
+ion-badge{
+    width: 100%;
+    
+
+}
+p{
+  font-family: sans-serif;
+  font-weight: -9px;
+  /* font-weight: 600; */
+  color: black;
+  margin: 0px;
+  margin-top: 4px;
+  font-size: 12px;
+    /* padding: 2px; */
+   
+  }
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .fadeInUp{
+      animation-name: fadeInUp;
+      animation-duration: 1s;
+  }
+  h4{
+    padding: 4px;
+    margin: 0px;
+    margin-bottom: 5px;
+    text-align: center;
+    /* box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12); */
+    background: linear-gradient(to bottom, #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#fdffff 12%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%);
+
+}
+.name{
+  background: white;
+    padding: 2px;
+    margin: 0px;
+    margin-bottom: 5px;
+    text-align: center;
+    // box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)
+}
+  
+  .kpi{
+    text-align: center;
+    background: linear-gradient(to bottom, #fefcea 0%,#f1da36 100%);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    height: 44px;
+  }
+  .report{
+    text-align: center;
+    background: linear-gradient(to bottom, #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#fdffff 12%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    height: 44px;
+  }

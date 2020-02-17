@@ -1,5 +1,7 @@
 {
   "name": "capex",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -1,0 +1,201 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>Asset Details</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="notifications()" color="light">
+        <!-- <ion-icon slot="icon-only" name="ios-notifications"></ion-icon> -->
+        <!-- <ion-badge color="danger">4</ion-badge> -->
+      </ion-button>
+      <!-- <ion-button (click)="profile()" color="light">
+        <ion-icon slot="icon-only" name="contact"></ion-icon>
+      </ion-button> -->
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid *ngIf="dv == 1" >
+    <ion-row>
+      <ion-col size="12" *ngFor="let item of list">
+        <ion-card  >
+          <div class="effect">
+            <div class="wrap">
+              
+              <p>Asset Type : {{item.asset_name}}</p>
+              <p *ngIf="item.budget_type == 1">Budget Type : Budgeted</p>
+              <p *ngIf="item.budget_type == 2">Budget Type : Non-Budgeted</p>
+              <p *ngIf="item.sbu_name">SBU : {{item.sbu_name}} </p>
+              <p *ngIf="item.b_func">Broad Function : {{item.b_func}}</p>
+              <p *ngIf="item.location">Location : {{item.location}} </p>
+
+              <ion-button size="small"  class="ion-activatable" (click)="ytdgraph(item)" color="success" slot="end" fill="solid">
+                View 
+                <ion-ripple-effect></ion-ripple-effect>
+              </ion-button>
+
+            </div>
+
+
+          </div>
+
+        </ion-card>
+      </ion-col>
+    
+
+
+    </ion-row>
+  </ion-grid>
+ 
+  <ion-grid *ngIf="dv == 2">
+    <ion-row>
+      <ion-col size="12" *ngFor="let item of list">
+        <ion-card  >
+          <div class="effect">
+            <div class="wrap">
+           
+              <p>Asset Type : {{item.asset_name}}</p>
+              <p *ngIf="item.budget_type == 1">Budget Type : Budgeted</p>
+              <p *ngIf="item.budget_type == 2">Budget Type : Non-Budgeted</p>
+              <p *ngIf="item.sbu_name">SBU : {{item.sbu_name}} </p>
+              <p *ngIf="item.b_func">Broad Function : {{item.b_func}}</p>
+              <p *ngIf="item.location">Location : {{item.location}} </p>
+              <ion-button size="small" class="ion-activatable" (click)="yoy(item)" color="success" slot="end" fill="solid">
+                View 
+                <ion-ripple-effect></ion-ripple-effect>
+              </ion-button>
+
+            </div>
+
+
+          </div>
+
+        </ion-card>
+      </ion-col>
+      
+
+
+    </ion-row>
+  </ion-grid>
+ 
+  <ion-grid *ngIf="dv == 3">
+    <ion-row>
+      <ion-col *ngFor="let item of list" size="12">
+        <ion-card>
+          <div class="effect">
+            <div class="wrap">
+           
+              <p style="margin-bottom: 10px;">Asset : {{item.asset_name}} <span>
+                <ion-button *ngIf="type == 'BC' " class="ion-activatable" (click)="bc(item)" color="success" slot="end" size="small" fill="solid">
+                  View  
+                  <ion-ripple-effect></ion-ripple-effect>
+                </ion-button>
+                <ion-button *ngIf="type == 'SBU' " class="ion-activatable" (click)="assetpie(item)" color="success" slot="end" size="small" fill="solid">
+                  View  
+                  <ion-ripple-effect></ion-ripple-effect>
+                </ion-button>
+                <ion-button *ngIf="type == 'Location' " class="ion-activatable" (click)="assetline(item)" color="success" slot="end" size="small" fill="solid">
+                  View  
+                  <ion-ripple-effect></ion-ripple-effect>
+                </ion-button>
+  
+              </span></p>
+
+            
+            </div>
+
+
+          </div>
+
+        </ion-card>
+      </ion-col>
+     
+
+
+    </ion-row>
+  </ion-grid>
+  
+  <ion-grid *ngIf="dv == 4">
+    <ion-grid >
+      <ion-row>
+        <ion-col size="12">
+          <ion-card>
+            <div class="effect">
+              <div class="wrap">
+            <ion-card-header style="    padding: 0px;
+            margin-bottom: 9px;">
+              <h1 style="color: black;"> High Utilized Budget</h1>
+            </ion-card-header>
+            
+                BUDGET COMBINATION & PERCENTAGE
+                <ion-row style="margin-top:10px;">
+                  <table style="width:100%" >
+  
+                    <tr *ngFor="let item of highh">
+                      <td style="color: black;"> {{item.name}}   </td>
+                      <td>
+                        <ion-badge  [style.background-color]="item.color">{{item.value}} %</ion-badge>
+                      </td>
+                      
+                    </tr>
+                  
+                   
+                  </table>
+             
+           
+              </ion-row>
+            
+               
+               
+              </div>
+            </div>
+          </ion-card>
+       
+          </ion-col>
+          <ion-col size="12">
+            <ion-card>
+              <div class="effect">
+                <div class="wrap">
+              <ion-card-header style="    padding: 0px;
+              margin-bottom: 9px;">
+                <h1 style="color: black;"> Low  Utilized Budget</h1>
+              </ion-card-header>
+              
+                  BUDGET COMBINATION & PERCENTAGE
+                  <ion-row style="margin-top:10px;">
+                    <table style="width:100%" >
+   
+                      <tr *ngFor="let item of low">
+                        <td style="color: black;"> {{item.name}}   </td>
+                        <td>
+                          <ion-badge [style.background-color]="item.color">{{item.value}} %</ion-badge>
+                        </td>
+                        
+                      </tr>
+                    
+                     
+                    </table>
+               
+             
+                </ion-row>
+                 
+                 
+                 
+                </div>
+              </div>
+            </ion-card>
+          </ion-col>
+  
+  
+  
+  
+  
+  
+      </ion-row>
+    </ion-grid>
+  </ion-grid>
+</ion-content>

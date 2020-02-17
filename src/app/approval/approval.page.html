@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color="success">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-buttons slot="secondary">
+            <ion-button (click)="notif()" color="light">
+              <!-- <ion-icon slot="icon-only" name="ios-notifications"></ion-icon> -->
+              <!-- <ion-badge color="danger">4</ion-badge> -->
+            </ion-button>
+            <!-- <ion-button (click)="profile()" color="light">
+              <ion-icon slot="icon-only" name="contact"></ion-icon>
+            </ion-button> -->
+          
+          </ion-buttons>
+    <ion-title>Approval</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card *ngFor="let item of menu">
+      <div class="effect">
+        <div class="wrap">
+        <ion-item class="fadeInRight"  *ngIf="item.name !== 'employee'  && item.name !== 'user' && item.name !== 'jmd' " >
+       
+          <p *ngIf="item.name == 'cfo'">
+            CFO Approval List
+            
+          </p>
+          <p *ngIf="item.name == 'cmd'">
+            CMD Approval List
+            
+          </p>
+          <p *ngIf="item.name == 'supervisor'">
+            Supervisor Approval List
+            
+          </p>
+          <p *ngIf="item.name == 'finance'">
+            Finance Review List
+            
+          </p>
+        
+         
+          <p *ngIf=" item.name == 'budget_owner' ">
+            Budget Owner Approval List
+            
+          </p>
+
+         
+         
+          <ion-button class="ion-activatable" (click)="view(item)" color="success" slot="end" fill="solid">
+            
+            select
+            <ion-ripple-effect></ion-ripple-effect>
+            </ion-button> 
+           
+            
+          </ion-item>
+        </div>
+      </div>
+      </ion-card>
+</ion-content>

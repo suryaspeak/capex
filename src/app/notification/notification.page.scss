@@ -1,0 +1,56 @@
+@keyframes fadeInRight {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  .fadeInRight {
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+    animation-duration: 1s;
+  }
+  p{
+    font-family: sans-serif;
+    font-weight: -9px;
+    font-weight: 600;
+    color: #000000cf;
+   
+   
+    font-size: 13px;
+  }
+  .ion-activatable {
+    position: relative;
+    overflow: hidden;
+  }
+  .ion-button{
+    --ripple-color:red;
+  }
+  .effect{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background-color: #ECE5B6;
+    padding-left: 13px;
+    // padding-right: 13px;
+ }
+ .effect::before{
+    content: "";
+    border-style: solid;
+    border-width: 23px 23px 0 0;
+    border-color: #FFD801 transparent transparent transparent;
+    position: absolute;
+    left: 0;
+    z-index: 100000000000000000;
+    top:0;
+ }
+ ion-card{
+   --background:#ECE5B6;
+ }

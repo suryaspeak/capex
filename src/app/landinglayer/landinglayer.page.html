@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="success">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-buttons slot="secondary">
+            <ion-button (click)="notif()" color="light">
+              <ion-icon slot="icon-only" name="ios-notifications"></ion-icon>
+              <!-- <ion-badge color="danger">4</ion-badge> -->
+            </ion-button>
+            <ion-button (click)="profile()" color="light">
+              <ion-icon slot="icon-only" name="contact"></ion-icon>
+            </ion-button>
+          
+          </ion-buttons>
+    <ion-title>Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card  *ngFor="let item of list">
+    <div class="effect">
+      <div class="wrap">
+        <ion-item class="fadeInRight">
+          <p>
+            YTD Budget Utilization
+          </p>
+
+          <ion-button class="ion-activatable" (click)="view()" color="success" slot="end" fill="outline">
+            select
+            <ion-ripple-effect></ion-ripple-effect>
+          </ion-button>
+        </ion-item>
+      </div>
+    </div>
+  </ion-card>
+
+</ion-content>

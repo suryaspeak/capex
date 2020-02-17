@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Edit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-list>
+      <ion-item>
+        <ion-label>Required By Date<span>*</span>:</ion-label>
+        <ion-datetime [(ngModel)]="expected_date" displayFormat="DD-MM-YYYY" pickerFormat="DD-MM-YYYY"  ></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Manufacturer<span>*</span> : </ion-label>
+        <ion-input [(ngModel)]="manufacturer" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Asset Name<span>*</span> : </ion-label>
+        <ion-input [(ngModel)]="asset_name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Description/Specification<span>*</span> : </ion-label>
+        <ion-textarea [(ngModel)]="budget_description" rows="2" placeholder=""></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating" >Justification<span>*</span> : </ion-label>
+        <ion-textarea rows="2" [(ngModel)]="asset_justification" placeholder=""></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Quantity<span>*</span> : </ion-label>
+        <ion-input type="number" [(ngModel)]="asset_quantity"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Cost of Procurement<span>*</span> : </ion-label>
+        <ion-input type="number" [(ngModel)]="approve_amount"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating"> Proposed Vendor Name :</ion-label>
+        <ion-input [(ngModel)]="vender_name1"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating"> SAP Vendor Code :</ion-label>
+        <ion-input [(ngModel)]="sap_vender_code1"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating"> Alternate Vendor Name 1 :</ion-label>
+        <ion-input [(ngModel)]="vender_name2"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating"> SAP Vendor Code 1 :</ion-label>
+        <ion-input [(ngModel)]="sap_vender_code2"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating"> Alternate Vendor Name 2 : </ion-label>
+        <ion-input [(ngModel)]="vender_name3"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating"> SAP Vendor Code 2 : </ion-label>
+        <ion-input [(ngModel)]="sap_vender_code3"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating"> Alternate Vendor Name 3 : </ion-label>
+        <ion-input [(ngModel)]="vender_name4"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">SAP Vendor Code 3 </ion-label>
+        <ion-input [(ngModel)]="sap_vender_code4"></ion-input>
+      </ion-item>
+      
+      
+  <ion-item>
+    <ion-label position="floating">Approve <span>*</span> : </ion-label>
+    <ion-select [(ngModel)]="approve" (ionChange)="change()" placeholder="Select One">
+      <ion-select-option value="yes">Yes</ion-select-option>
+      <ion-select-option value="no">No</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Supervisor Comment <span *ngIf ="show=='0'">*</span> :  </ion-label>
+    <ion-input [(ngModel)]="supervisor_comment"></ion-input>
+  </ion-item>
+
+    </ion-list>
+    <ion-button (click)="submit()" expand="full" fill="solid	">Submit</ion-button>
+  </ion-card>
+</ion-content>

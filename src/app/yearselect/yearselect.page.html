@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar  color="success">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Select Filter</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item>
+      <ion-label >Select Year</ion-label>
+      <ion-select  [(ngModel)]="year" *ngFor="let item of yeardata">
+        <ion-select-option value="{{item}}"   (ionSelect)="onSiteChange()"> {{item}}</ion-select-option  >
+        
+      </ion-select>
+     
+      <!-- <ion-datetime [(ngModel)]="year" displayFormat="YYYY" pickerFormat="YYYY" placeholder="Select Year" min="2020" ></ion-datetime> -->
+    </ion-item>
+  </ion-card>
+
+  <ion-card *ngIf="role== 'asset'">
+    <ion-item>
+      <ion-label>Select Budget Utilization Type</ion-label>
+      <ion-select [(ngModel)]="type" value="brown" okText="Okay" cancelText="Dismiss">
+        <ion-select-option value="BC">Budget Combination</ion-select-option>
+        <ion-select-option value="SBU">SBU</ion-select-option>
+        <ion-select-option value="Location">Location</ion-select-option>
+        
+      </ion-select>
+    </ion-item>
+  </ion-card>
+  
+
+  <ion-button color="success"  (click)="submit()" expand="block" size="default">Submit</ion-button>
+</ion-content>

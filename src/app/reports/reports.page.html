@@ -1,0 +1,179 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>Budget VS Actual Report</ion-title>
+    <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="accordionWrapper">
+    <div class="accordionItem close ">
+      <h3 class="accordionItemHeading">Asset Group: IT ,Budget Type: Budgeted</h3>
+      <div class="accordionItemContent">
+        <div>
+        
+              
+              <div style="width: 100%; margin-bottom: 3px;" *ngFor="let item of report_list">
+              <ion-card *ngIf="item.budget_type== 'Budgeted' && item.asset_group=='IT' ">
+                <ion-card-content  >
+                  <p>Asset Type : {{item.asset_type}}</p>
+
+                  <p *ngIf="item.sbu">SBU : {{item.sbu}}</p>
+                  <p *ngIf="item.broadFunction">Broad Function : {{item.broadFunction}}</p>
+                  <p *ngIf="item.location">Location: {{item.location}}</p>
+                  <p>Budget Amount : {{item.budgeted_amount}}</p>
+                  <p>Consumed Amount : {{item.budget_amount_consumed}}</p>
+                
+                </ion-card-content>
+              
+              </ion-card>
+            </div>
+          
+         </div>
+      </div>
+         <!-- <div>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="6" *ngFor="let item of report_list">
+              <ion-card>
+                <ion-card-content>
+                  <p>Asset Group : {{item.asset_group}}</p>
+                  <p>Budeget Type : {{item.budget_type}}</p>
+                  <p *ngIf="item.sbu">SBU : {{item.sbu}}</p>
+                  <p *ngIf="item.broadFunction">Broad Function : {{item.broadFunction}}</p>
+                  <p *ngIf="item.location">Location: {{item.location}}</p>
+                  <p>Budget Amount : {{item.budgeted_amount}}</p>
+                  <p>Consumed Amount : {{item.budget_amount_consumed}}</p>
+                
+                </ion-card-content>
+              
+              </ion-card>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+         </div> -->
+          </div>
+
+
+
+
+         
+
+
+
+                
+          <div class="accordionItem close ">
+            <h3 class="accordionItemHeading">Asset Group: IT , Budget Type: Non Budgeted</h3>
+            <div class="accordionItemContent">
+              <div>
+               
+                    
+                    <div style="width: 100%; margin-bottom: 3px;" *ngFor="let item of report_list">
+                    <ion-card *ngIf="item.budget_type== 'Non Budgeted' && item.asset_group=='IT' ">
+                      <ion-card-content  >
+                        <p>Asset Type : {{item.asset_type}}</p>
+      
+                        <p *ngIf="item.sbu">SBU : {{item.sbu}}</p>
+                        <p *ngIf="item.broadFunction">Broad Function : {{item.broadFunction}}</p>
+                        <p *ngIf="item.location">Location: {{item.location}}</p>
+                        <p>Budget Amount : {{item.budgeted_amount}}</p>
+                        <p>Consumed Amount : {{item.budget_amount_consumed}}</p>
+                      
+                      </ion-card-content>
+                    
+                    </ion-card>
+                  </div>
+                  
+               </div>
+            </div>
+              
+                </div>
+
+
+
+           
+          <div class="accordionItem close ">
+            <h3 class="accordionItemHeading">Asset Group: Non IT , Budget Type: Budgeted</h3>
+            <div class="accordionItemContent">
+              <div>
+               
+                    
+                    <div style="width: 100%; margin-bottom: 3px;" *ngFor="let item of report_list">
+                    <ion-card *ngIf="item.budget_type== 'Budgeted' && item.asset_group=='NON IT' ">
+                      <ion-card-content  >
+                        <p>Asset Type : {{item.asset_type}}</p>
+      
+                        <p *ngIf="item.sbu">SBU : {{item.sbu}}</p>
+                        <p *ngIf="item.broadFunction">Broad Function : {{item.broadFunction}}</p>
+                        <p *ngIf="item.location">Location: {{item.location}}</p>
+                        <p>Budget Amount : {{item.budgeted_amount}}</p>
+                        <p>Consumed Amount : {{item.budget_amount_consumed}}</p>
+                      
+                      </ion-card-content>
+                    
+                    </ion-card>
+                  </div>
+                  
+               </div>
+            </div>
+           
+                </div>
+
+
+
+                <div class="accordionItem close ">
+                  <h3 class="accordionItemHeading">Asset Group: Non IT , Budget Type: Non Budgeted</h3>
+                  <div class="accordionItemContent">
+                    <div>
+                     
+                          
+                          <div style="width: 100%; margin-bottom: 3px;" *ngFor="let item of report_list">
+                          <ion-card *ngIf="item.budget_type== 'Non Budgeted' && item.asset_group=='NON IT' ">
+                            <ion-card-content  >
+                              <p>Asset Type : {{item.asset_type}}</p>
+            
+                              <p *ngIf="item.sbu">SBU : {{item.sbu}}</p>
+                              <p *ngIf="item.broadFunction">Broad Function : {{item.broadFunction}}</p>
+                              <p *ngIf="item.location">Location: {{item.location}}</p>
+                              <p>Budget Amount : {{item.budgeted_amount}}</p>
+                              <p>Consumed Amount : {{item.budget_amount_consumed}}</p>
+                            
+                            </ion-card-content>
+                          
+                          </ion-card>
+                        </div>
+                        
+                     </div>
+                  </div>
+                 
+                      </div>
+
+
+
+
+        </div>
+        
+  <!-- <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let item of report_list">
+      <ion-card>
+        <ion-card-content>
+          <p>Asset Group : {{item.asset_group}}</p>
+          <p>Budeget Type : {{item.budget_type}}</p>
+          <p *ngIf="item.sbu">SBU : {{item.sbu}}</p>
+          <p *ngIf="item.broadFunction">Broad Function : {{item.broadFunction}}</p>
+          <p *ngIf="item.location">Location: {{item.location}}</p>
+          <p>Budget Amount : {{item.budgeted_amount}}</p>
+          <p>Consumed Amount : {{item.budget_amount_consumed}}</p>
+        
+        </ion-card-content>
+      
+      </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+
+</ion-content>

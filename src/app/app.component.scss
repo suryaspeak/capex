@@ -1,0 +1,40 @@
+ion-menu {
+    // --ion-background-color: linear-gradient(160deg, #B627F2 40%, #10DFC8 60%);
+    --ion-background-color: white;
+    border-radius: 10px 65px 85px 0px;
+    width: 304px;
+
+    ion-item{
+       
+        // color:000000d1;
+        font-weight: 600;
+        // --border-color:white;
+    }
+    ion-label{
+        color: #3956a6;
+    }
+    ion-icon{
+        color: #f6882e;
+    background: black;
+    border-radius: 22px;
+    padding: 1px;
+    }
+    ion-item{
+        --background: #f9f9f9;
+    }
+    ion-card{
+        --padding:0px;
+    }
+    img{
+        padding: 12px;
+        height: 50px;
+        width: 91%;
+    }
+}
+
+
+.alert-checkbox-label.sc-ion-alert-md {
+ 
+    white-space: inherit !important;
+    
+}

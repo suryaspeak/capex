@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>Top 5 Utilized/Non-Utilized Budget</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="notifications()" color="light">
+        <!-- <ion-icon slot="icon-only" name="ios-notifications"></ion-icon> -->
+        <!-- <ion-badge color="danger">4</ion-badge> -->
+      </ion-button>
+      <!-- <ion-button (click)="profile()" color="light">
+        <ion-icon slot="icon-only" name="contact"></ion-icon>
+      </ion-button> -->
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid >
+    <ion-row>
+      <ion-col size="12">
+        <ion-card>
+          <div class="effect">
+            <div class="wrap">
+          <ion-card-header style="    padding: 0px;
+          margin-bottom: 9px;">
+            <h1> High Utilized Budget</h1>
+          </ion-card-header>
+          
+              BUDGET COMBINATION & PERCENTAGE
+              <ion-row style="margin-top:10px;">
+                <table style="width:100%" >
+
+                  <tr *ngFor="let item of highh">
+                    <td> {{item.name}}   </td>
+                    <td>
+                      <ion-badge  [style.background-color]="item.color">{{item.value}} %</ion-badge>
+                    </td>
+                    
+                  </tr>
+                
+                 
+                </table>
+           
+         
+            </ion-row>
+          
+             
+             
+            </div>
+          </div>
+        </ion-card>
+     
+        </ion-col>
+        <ion-col size="12">
+          <ion-card>
+            <div class="effect">
+              <div class="wrap">
+            <ion-card-header style="    padding: 0px;
+            margin-bottom: 9px;">
+              <h1> Low  Utilized Budget</h1>
+            </ion-card-header>
+            
+                BUDGET COMBINATION & PERCENTAGE
+                <ion-row style="margin-top:10px;">
+                  <table style="width:100%" >
+ 
+                    <tr *ngFor="let item of low">
+                      <td> {{item.name}}   </td>
+                      <td>
+                        <ion-badge [style.background-color]="item.color">{{item.value}} %</ion-badge>
+                      </td>
+                      
+                    </tr>
+                  
+                   
+                  </table>
+             
+           
+              </ion-row>
+               
+               
+               
+              </div>
+            </div>
+          </ion-card>
+        </ion-col>
+
+
+
+
+
+
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,57 @@
+img{
+    height: 80px;
+    width: 80px;
+    margin-left: 37%;
+    padding: 10px;
+
+}
+p{
+    font-family: sans-serif;
+    font-weight: -9px;
+    /* font-style: unset; */
+    font-weight: 600;
+    color: #000000cf;
+  }
+ion-card{
+    --background:#f9f9f9;
+    margin-top: 1%;
+}
+ion-item{
+    --background:#f9f9f9;
+}
+.effect{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding-left: 13px;
+    padding-right: 13px;
+ }
+ .effect::before{
+    content: "";
+    border-style: solid;
+    border-width: 40px 40px 0 0;
+    border-color: #a2efa9 transparent transparent transparent;
+    position: absolute;
+    left: 0;
+    z-index: 100000000000000000;
+    top: 0;
+ }
+ @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .fadeInUp{
+      animation-name: fadeInUp;
+      animation-duration: 1s;
+  }
+  

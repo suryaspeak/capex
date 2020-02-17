@@ -1,0 +1,218 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Capex Details View</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!-- <ion-card class="fadeInUp" >
+  <ion-card-content>
+  <h3> <ion-badge style="font-size: 17px;" color="success">Employee Details</ion-badge></h3>
+  <p>Compmany Code : {{Company_code}}</p>
+  <p>Employee Code : {{Employee_code}}</p>
+    <p>Employee Name : {{Employee_Name}}</p>
+    <p>Grade : {{Grade}}</p>
+    <p>SBU : {{SBU}}</p>
+    
+    <p>Designation : {{Designation}}</p>
+    <p>Broad Function : {{Broad_Function }}</p>
+    <p>Location : {{Location}}</p>
+    <p>Plant :{{Plant}}</p>
+    <p>Supervisor Name :{{Supervisor_Name}}</p>
+    <p>Territory :{{Territory}}</p>
+    <p>Cost Centre :{{Cost_Centre}}</p>
+    <h3> <ion-badge style="font-size: 17px;" color="success">Capex Details</ion-badge> </h3>
+    <p>Capex Request No : {{Capex_Request_No}}</p>
+    <p>Budget Type : {{Budget_Type}}</p>
+    <p>Manufacturer : {{Manufacturer}}</p>
+    <p>Quantity : {{Quantity}}</p>
+    <p>Contact Person : {{Contact_Person}}</p>
+    <p>Total Budget : {{Total_Budget}}</p>
+    <p>Budget Consumed : {{Budget_Consumed}}</p>
+    <p>Remaining Budget : {{Remaining Budget}}</p>
+  <p>Non Budgeted Budget Owner Comment : {{Non_Budgeted_Budget_Owner_Comment}}</p>
+    <p> Non Budgeted CFO Comment : {{Non_Budgeted_CFO_Comment}}</p>
+    <p>Capex Requested Date : {{Capex_Requested_Date}}</p>
+    <p>Expected Date  : {{Expected_Date}}</p>
+    <p>Description Specification : {{Description_Specification}}</p> 
+    <p>Cost of Procurement : {{Cost_of_Procurement}}</p> 
+    <p>Supervisor Comment : {{Supervisor_Comment}}</p>
+    <p>CFO Comment : {{CFO_Comment}}</p>
+    <p>Sanction No : {{Sanction_No}}</p>
+    <p>Asset No : {{Asset_No}}</p>
+<p>Non Budgeted Supervisor Comment : {{Non_Budgeted_Supervisor_Comment}}</p>
+    <p>Asset Group : {{Asset_Group}}</p>
+    <p>Asset Type : {{Asset_Type}}</p>
+    <p>Asset Name : {{Asset_Name}}</p>
+    <p>Justification : {{Justification}}</p>
+<p>Budget Owner Comment :{{Budget_Owner_Comment}}</p>
+  <p>Budget Approve For :{{Budget_Approve_For}}</p>
+  <p>Status :{{Status}}</p>
+  <p>Failed Reason :{{Failed_Reason}}</p>
+
+
+  </ion-card-content>
+</ion-card> -->
+
+
+
+<div class="accordionWrapper">
+  <div class="accordionItem close ">
+        <h3 class="accordionItemHeading">Employee Details</h3>
+        <div class="accordionItemContent">
+          <p>Compmany Code : {{Company_code}}</p>
+          <p>Employee Code : {{Employee_code}}</p>
+            <p>Employee Name : {{Employee_Name}}</p>
+            <p>Grade : {{Grade}}</p>
+            <p>SBU : {{SBU}}</p>
+            
+            <p>Designation : {{Designation}}</p>
+            <p>Broad Function : {{Broad_Function }}</p>
+            <p>Location : {{Location}}</p>
+            <p>Plant :{{Plant}}</p>
+            <p>Supervisor Name :{{Supervisor_Name}}</p>
+            <p>Territory :{{Territory}}</p>
+            <p>Cost Centre :{{Cost_Centre}}</p>
+        </div>
+      </div>
+  
+      <div class="accordionItem close">
+        <h3 class="accordionItemHeading">Capex Request Details</h3>
+        <div class="accordionItemContent">
+          <p>Capex Request No : {{Capex_Request_No}}</p>
+          <p>Asset Group : {{Asset_Group}}</p>
+          <p>Asset Type : {{Asset_Type}}</p>
+          <p>Budget Type : {{Budget_Type}}</p>
+          <p> Requested Date : {{Capex_Requested_Date}}</p>
+      
+          <!-- <p>Manufacturer : {{Manufacturer}}</p>
+          <p>Quantity : {{Quantity}}</p>
+          <p>Contact Person : {{Contact_Person}}</p> -->
+          
+          
+          <!-- <p>Remaining Budget : {{Remaining Budget}}</p> -->
+          <p>Non Budgeted Requester Comment :{{non_budgeted_user_comment}}</p>
+          <p>Supervisor Comment : {{Supervisor_Comment}}</p>
+        <p>Non Budgeted Budget Owner Comment : {{Non_Budgeted_Budget_Owner_Comment}}</p>
+        <p>Non Budgeted Supervisor Comment : {{Non_Budgeted_Supervisor_Comment}}</p>
+         <p *ngIf="approver_role == 'cfo'"> Budget Owner Comment : {{Budget_Owner_Comment}} </p>
+         <p *ngIf="approver_role == 'cmd'"> Budget Owner Comment : {{Budget_Owner_Comment}} </p>
+         <p *ngIf="approver_role == 'cmd'">CFO Comment : {{CFO_Comment}}</p>
+         <p *ngIf="approver_role == 'cmd'">Non Budgeted CFO Comment : {{non_budgeted_cfo_comment}}</p>
+         
+          <!-- <p> Non Budgeted CFO Comment : {{Non_Budgeted_CFO_Comment}}</p>
+        
+          <p>Expected Date  : {{Expected_Date}}</p>
+          <p>Description Specification : {{Description_Specification}}</p> 
+          <p>Cost of Procurement : {{Cost_of_Procurement}}</p> 
+          
+          <p>CFO Comment : {{CFO_Comment}}</p>
+          <p>Sanction No : {{Sanction_No}}</p>
+          <p>Asset No : {{Asset_No}}</p>
+      
+          <p>Asset Name : {{Asset_Name}}</p>
+          <p>Justification : {{Justification}}</p>
+      <p>Budget Owner Comment :{{Budget_Owner_Comment}}</p>
+        <p>Budget Approve For :{{Budget_Approve_For}}</p>
+        <p>Status :{{Status}}</p>
+        <p>Failed Reason :{{Failed_Reason}}</p> -->
+         <div *ngFor="let item of quotation"   >
+          <ion-button color="success" (click)="download(item)"  size="small">{{item.name}}</ion-button>
+         </div>
+        
+        </div>
+      </div>
+
+      <div class="accordionItem close ">
+        <h3 class="accordionItemHeading">Budget Notifications</h3>
+        <div class="accordionItemContent">
+          <p>Total Budget : {{budget_amount}}</p>
+
+          <p>Total Budget Consumed : {{Budget_Consumed}}</p>
+          <p>Total Budget Remaining : {{remaining_budget}}</p>
+          <!-- <p>Total Budget Remaining  : {{Remaining Budget}}</p> -->
+          <p>Budget Description : {{Asset_Type}}</p>
+          <!-- <p>Cost of Procurement : {{Cost_of_Procurement}}</p>  -->
+          <p>Average Value Of Same Asset For Same Employee Grade As Requester: {{average_value_same_asset}}</p>
+          <p>Total Number Of Similar  Capex Raised By {{name}} :{{total_capex_request_by_emp_no}}</p>
+
+<!-- 
+          <p>Created At : {{created_at}}</p>
+          <p>Manufacturer : {{Manufacturer}}</p>
+          <p>Asset Name : {{Asset_Name}}</p>
+            <p>Description : {{asset_description}}</p>
+            <p>Justification : {{asset_justification}}</p>
+            
+            <p>Quantity : {{asset_quantity}}</p>
+            <p>Cost Of Procurement : {{approve_amount }}</p>
+            <p>Proposed Vendor Name : {{vender_name1}}</p>
+            <p>SAP Vendor Code :{{sap_vender_code1}}</p>
+            <p>Alternate Vendor Name1 :{{vender_name2}}</p>
+            <p>Alternate Vendor Code1 :{{sap_vender_code2}}</p>
+            <p>Alternate Vendor Name2 :{{vender_name3}}</p>
+            <p>Alternate Vendor Code2 :{{sap_vender_code3}}</p> -->
+
+
+
+        </div>
+      </div>
+
+      <div class="accordionItem open ">
+        <h3 class="accordionItemHeading">Approve Capex Request</h3>
+        <div class="accordionItemContent">
+          <p>Required By Date : {{Expected_Date}}</p>
+          <p>Manufacturer : {{Manufacturer}}</p>
+          <p>Asset Name : {{Asset_Name}}</p>
+            <p>Description/Specification : {{asset_description}}</p>
+            <p>Justification : {{asset_justification}}</p>
+            
+            <p>Quantity : {{asset_quantity}}</p>
+            <p>Cost Of Procurement : {{approve_amount }}</p>
+            <p>Proposed Vendor Name : {{vender_name1}}</p>
+            <p>SAP Vendor Code :{{sap_vender_code1}}</p>
+            <p>Alternate Vendor Name 1 :{{vender_name2}}</p>
+            <p>Sap Vendor Code 1 :{{sap_vender_code2}}</p>
+            <p>Alternate Vendor Name 2 :{{vender_name3}}</p>
+            <p>SaP Vendor Code 2 :{{sap_vender_code3}}</p>
+            <p>Alternate Vendor Name 3 :{{vender_name4}}</p>
+            <p>SaP Vendor Code 3 :{{sap_vender_code4}}</p>
+
+
+
+        </div>
+      </div>
+  
+      
+  </div>
+
+ 
+
+  
+
+
+
+
+
+</ion-content>
+<ion-footer>
+  <ion-item *ngIf="budget_type == '2' && approver_role !== 'cmd' ">
+    <ion-label position="floating">Non-Budget Comment <span >*</span> :  </ion-label>
+    <!-- <ion-input [(ngModel)]="comment"></ion-input> -->
+    <ion-textarea [(ngModel)]="noncomment" rows="1" placeholder=""></ion-textarea>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating"> Comment <span >*</span> :  </ion-label>
+    <!-- <ion-input [(ngModel)]="comment"></ion-input> -->
+    <ion-textarea [(ngModel)]="comment" rows="1" placeholder=""></ion-textarea>
+  </ion-item>
+
+  <ion-toolbar >
+    <ion-button color="secondary" slot="start" (click)="approve()" size="small">Approve</ion-button>
+    <ion-button slot="end" (click)="no()"  size="small" color="danger">Reject</ion-button>
+  </ion-toolbar>
+ 
+</ion-footer>

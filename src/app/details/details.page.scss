@@ -1,0 +1,60 @@
+.effect{
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  // background: linear-gradient(to right, rgba(252,236,252,1) 0%, rgba(252,236,252,1) 4%, rgba(251,166,225,1) 51%, rgba(255,124,216,1) 100%);
+  padding-left: 13px;
+  padding-right: 13px;
+}
+ion-card{
+  background: #ECE5B6;
+  // background: linear-gradient(to right, rgba(252,236,252,1) 0%, rgba(252,236,252,1) 4%, rgba(251,166,225,1) 51%, rgba(255,124,216,1) 100%);
+}
+.effect::before{
+  content: "";
+  border-style: solid;
+  border-width: 20px 20px 0 0;
+  border-color: #FFD801 transparent transparent transparent;
+  position: absolute;
+  left: 0;
+  top:0;
+}
+p{
+  // font-family: sans-serif;
+  // font-weight: -9px;
+  // font-weight: 600;
+  // color: #000000cf;
+  // margin-bottom: 0px;
+  // border-bottom: 1px solid #8080804a;
+  // padding-bottom: 8px;
+  // font-size: 13px;
+  font-family: sans-serif;
+  font-weight: -9px;
+  font-weight: 600;
+  color: #000000cf;
+  /* border-bottom: 1px solid #8080804a; */
+  /* padding-bottom: 6px; */
+  text-align: left;
+  margin: 6px;
+}
+ion-fab{
+  bottom: 0;
+}
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .fadeInUp{
+      animation-name: fadeInUp;
+      animation-duration: 1s;
+  }
+  

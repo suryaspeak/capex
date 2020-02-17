@@ -1,0 +1,181 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>Home</ion-title>
+    <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-buttons slot="end" >
+          <ion-button (click)="notif()" color="light">
+          
+            <ion-icon style="color:black"  name="ios-notifications">
+              
+             </ion-icon>
+             <span>
+              <ion-badge color="danger">{{notice_count}}</ion-badge>
+             </span>
+           
+          </ion-button>
+          <ion-button (click)="sync()" color="light">
+            <ion-icon style="color:black" slot="icon-only" name="sync"></ion-icon>
+          </ion-button>
+        
+        </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <h4 class="name">Welcome {{employename}}</h4>
+    <h4 >My Dashboard</h4>
+    <ion-row>
+      <ion-col *ngFor="let item of info"   size="6">
+        <ion-card>
+         <div class="effect">
+          <div class="wrap">
+            <!-- Value -->
+            <div class="text">{{item.key}}   </div>
+            <div  class="value"><span *ngIf="item.key == 'Total Capex Budgeted Amount' || item.key == 'Total Capex Non Budgeted Amount' || item.key == 'Total Capex Budgeted Consumed Amount'
+              || item.key == 'Total Capex Non Budgeted Consumed Amount'"> Rs. </span>{{item.value}}</div>
+            
+          </div>
+          
+
+         </div>
+         
+        </ion-card>
+      </ion-col>
+     
+     
+     
+    </ion-row>
+   
+  </ion-grid>
+
+  <div  *ngFor="let item of menu" >
+   <div *ngIf="item.name == 'budget_owner'  ">
+
+    <div >
+   <h4>Management KPI</h4>
+   <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+         <div class="kpi" (click)="yearYTD()">
+           <p>
+            YTD Budget Utilization
+           </p>
+         
+         </div>
+      </ion-col>
+      <ion-col size="6">
+        <div class="kpi" (click)="yearYOY()">
+          <p>  YOY Budget Utilization</p>
+        </div>
+       
+      </ion-col>
+      <ion-col size="12">
+        <div class="kpi" (click)="yearasset()">
+          <p>Asset Type Wise Utilization</p>
+        </div>
+      
+      </ion-col>
+    </ion-row>
+   </ion-grid>
+
+      <!-- <ion-button  expand="block" size="default">YTD Budget Utilization</ion-button>
+      <ion-button expand="block" size="default"> YOY Budget Utilization</ion-button>
+      <ion-button expand="block" size="default"> Asset Type Wise Utilization</ion-button> -->
+    </div>
+    
+
+   </div>
+
+   <div *ngIf="item.name == 'cfo' || item.name == 'cmd' || item.name == 'jmd'  ">
+
+  
+    <div >
+      <h4>Management KPI</h4>
+      <ion-grid>
+       <ion-row>
+         <ion-col size="6">
+            <div class="kpi" (click)="yearYTD()">
+              <p>
+               YTD Budget Utilization
+              </p>
+            
+            </div>
+         </ion-col>
+         <ion-col size="6">
+           <div class="kpi" (click)="yearYOY()">
+             <p>  YOY Budget Utilization</p>
+           </div>
+          
+         </ion-col>
+         <ion-col size="6">
+           <div class="kpi" (click)="yearasset()">
+             <p>Asset Type Wise Utilization</p>
+           </div>
+         
+         </ion-col>
+         <ion-col size="6">
+          <div class="kpi"  (click)="yeartop()">
+            <p>Top 5 Utilized/Non-Utilized Budget</p>
+          </div>
+        
+        </ion-col>
+       <ion-col size='12'>
+        <h4>Reports</h4>
+       </ion-col>
+        <ion-col size="6">
+          <div class="kpi"  (click)="budgetactual()">
+            <p>Budget VS Actual</p>
+          </div>
+        
+        </ion-col>
+        <ion-col size="6">
+          <div class="kpi"  (click)="budgetreport()">
+            <p>Budget Report</p>
+          </div>
+        
+        </ion-col>
+       </ion-row>
+      </ion-grid>
+   
+         <!-- <ion-button  expand="block" size="default">YTD Budget Utilization</ion-button>
+         <ion-button expand="block" size="default"> YOY Budget Utilization</ion-button>
+         <ion-button expand="block" size="default"> Asset Type Wise Utilization</ion-button> -->
+       </div>
+    
+
+   </div>
+  </div>
+</ion-content>
+
+
+
+
+<!-- <div  *ngFor="let item of menu" >
+  <div *ngIf="item.name == 'budget_owner' ">
+
+   <div >
+  <h4 style="text-align: center;">Maintanence KPI</h4>
+<ion-grid>
+ <ion-row>
+   <ion-col size="4">
+     <ion-button size="small">YTD Budget Utilization</ion-button>
+   </ion-col>
+   <ion-col size="4">
+     <ion-button size="small"> YOY Budget Utilization</ion-button>
+   </ion-col>
+   <ion-col size="4">
+     <ion-button size="small"> Asset Type Wise Utilization</ion-button>
+   </ion-col>
+ </ion-row>
+</ion-grid>
+    
+    
+    
+   </div>
+   
+
+  </div>
+ </div> -->

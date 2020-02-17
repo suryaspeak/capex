@@ -1,0 +1,67 @@
+<ion-content class="background" scroll="false">
+   <div >
+    <img class="img"  src="/assets/logo.png">
+
+
+    <div class="gcars" style="text-align:center;">
+        <h4>g-CARS</h4>
+        <p>CAPEX Approval & Review System</p>
+    </div>
+    <!-- <img class="cars"  src="/assets/cars.png"> -->
+   <ion-card>
+    <!-- <ion-card-header class="title">
+     
+    </ion-card-header> -->
+    
+    <ion-card-content>
+      <div  >
+        <!-- <form > -->
+          <ion-item class="backgroundinput">
+            <ion-label position="floating">User ID</ion-label>
+            <ion-input (ionFocus)="focus()"  (ionBlur)="blur()" name="email" type="email" [(ngModel)]="user"></ion-input>
+          </ion-item>
+
+          <ion-item class="backgroundinput">
+            <ion-label position="floating">Password</ion-label>
+            <ion-input (ionFocus)="focus()" (ionBlur)="blur()" type="password" [(ngModel)]="pass"></ion-input>            
+          </ion-item>
+          
+          <div class="btn-submit">
+            <ion-button color="success" expand="block" (click)="log()">              
+              <span>Log-In</span>            
+            </ion-button>
+          </div>
+
+          <p style="text-align: center; font-size: 15px;
+            color: #fefcea; ">Reset Password <b (click)="reset()" style="text-decoration: underline;"> Click Here </b></p>
+        <!-- </form> -->
+      </div>
+    
+    </ion-card-content>
+  </ion-card>
+  </div>
+  <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="arrow-dropright"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+ 
+     
+    
+    
+   
+    
+
+    
+
+ 
+</ion-content>
+<ion-footer>
+   
+  <div class="power">
+    <!-- <p *ngIf="show == 1" class="power_p"> Powered By Gainwell IT Team</p> -->
+    <p  class="power_p"> Powered By Gainwell IT Team</p>
+   
+  </div>
+  
+ </ion-footer>

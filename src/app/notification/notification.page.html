@@ -1,0 +1,27 @@
+<ion-toolbar color="success">
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+  <ion-title>Notification</ion-title>
+</ion-toolbar>
+
+<ion-content>
+<ion-card class="fadeInRight"  *ngFor="let item of list">
+  <div class="effect" >
+    <div class="wrap">
+ 
+    
+  
+      <p  style="text-align: center;">{{item.heading}} </p>
+    
+  
+      <p style="text-align: left;">{{item.message}}</p>
+
+
+
+
+  </div>
+  </div>
+</ion-card>
+ 
+</ion-content>

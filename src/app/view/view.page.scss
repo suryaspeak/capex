@@ -1,0 +1,132 @@
+p{
+  font-family: sans-serif;
+  font-weight: -9px;
+  font-weight: 600;
+  color: #000000cf;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #8080804a;
+  padding-bottom: 8px;
+  font-size: 13px;
+}
+
+  
+  h3{
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 18px;
+    padding: 2px;
+    font-weight: 600;
+   
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .fadeInUp{
+      animation-name: fadeInUp;
+      animation-duration: 1s;
+  }
+  .accordionWrapper
+  {
+    padding: 5px;
+    background: #fff;
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+    /* margin: 10%; */
+    box-shadow: 0 1.5em 85px 0 rgba(0, 0, 0, 0.2);
+  }
+.accordionItem{
+    float:left;
+    display:block;
+    width:100%;
+    box-sizing: border-box;
+    font-family:'Open-sans',Arial,sans-serif;
+}
+.accordionItemHeading{
+//     cursor:pointer;
+//     margin:0px 0px 10px 0px;
+//     padding:10px;
+//     background: #40aa49;
+//     font-size: 15px;
+//     color:#fff;
+//     width:100%;
+//     -webkit-border-radius: 3px;
+// -moz-border-radius: 3px;
+// border-radius: 3px;
+//         box-sizing: border-box;
+cursor: pointer;
+    margin: 0px 0px 10px 0px;
+    padding: 10px;
+    background: #40aa4985;
+    font-size: 15px;
+    color: #fff;
+    width: 100%;
+    border-radius: 3px;
+    box-sizing: border-box;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+.close .accordionItemContent{
+    height:0px;
+    transition:height 1s ease-out;
+    -webkit-transform: scaleY(0);
+	-o-transform: scaleY(0);
+	-ms-transform: scaleY(0);
+	transform: scaleY(0);
+    float:left;
+    display:block;
+    
+    
+}
+.open .accordionItemContent{
+        padding: 5px;
+    background-color: #f9f9f9;;
+    border: 1px solid #ddd;
+    width: 100%;
+    margin: 0px 0px 10px 0px;
+    display:block;
+    -webkit-transform: scaleY(1);
+	-o-transform: scaleY(1);
+	-ms-transform: scaleY(1);
+	transform: scaleY(1);
+    -webkit-transform-origin: top;
+	-o-transform-origin: top;
+	-ms-transform-origin: top;
+	transform-origin: top;
+
+	-webkit-transition: -webkit-transform 0.4s ease-out;
+	-o-transition: -o-transform 0.4s ease;
+	-ms-transition: -ms-transform 0.4s ease;
+	transition: transform 0.4s ease;
+        box-sizing: border-box;
+        
+}
+
+.open .accordionItemHeading{
+    margin:0px;
+        -webkit-border-top-left-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-topright: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 0px;
+    -webkit-border-bottom-left-radius: 0px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: #FFD801;
+    color: black;
+    font-size: 15px;
+}

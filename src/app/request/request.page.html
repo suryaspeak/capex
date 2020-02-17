@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>Capex Request</ion-title>
+    <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-buttons slot="secondary">
+          <ion-button (click)="notif()" color="light">
+            <ion-icon slot="icon-only" name="ios-notifications"></ion-icon>
+            <!-- <ion-badge color="danger">4</ion-badge> -->
+          </ion-button>
+          <ion-button (click)="profile()" color="light">
+            <ion-icon slot="icon-only" name="contact"></ion-icon>
+          </ion-button>
+        
+        </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content margin>
+
+    <ion-item>
+        <ion-label>Asset Group</ion-label>
+        <ion-select placeholder="Select One">
+          <ion-select-option value="f">Female</ion-select-option>
+          <ion-select-option value="m">Male</ion-select-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label>Asset Type</ion-label>
+        <ion-select placeholder="Select One">
+          <ion-select-option value="f">Female</ion-select-option>
+          <ion-select-option value="m">Male</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+          <ion-label>Request Type</ion-label>
+          <ion-select placeholder="Select One">
+            <ion-select-option value="f">Female</ion-select-option>
+            <ion-select-option value="m">Male</ion-select-option>
+          </ion-select>
+     </ion-item>
+     <ion-item>
+        <ion-label position="floating">Asset Name</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label position="floating">Description</ion-label>
+          <ion-input></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label position="floating">Justificaiton</ion-label>
+          <ion-input></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label position="floating">Quantity</ion-label>
+          <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Amount Exluding GST</ion-label>
+          <ion-input></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label position="floating">Proposed Vendor Name</ion-label>
+          <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">SAP Vendor Code</ion-label>
+          <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Alternate Vendor Name 1</ion-label>
+          <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">SAP Vendor Code 1</ion-label>
+          <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Alternate Vendor Name 2</ion-label>
+          <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">SAP Vendor Code 2</ion-label>
+          <ion-input></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label position="floating">Alternate Vendor Name 3</ion-label>
+          <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">SAP Vendor Code 3</ion-label>
+          <ion-input></ion-input>
+      </ion-item>
+
+      <ion-row text-center>
+          <ion-button color="success">Request Now</ion-button>
+          <ion-button color="danger">Cancel</ion-button>
+      </ion-row>
+</ion-content>

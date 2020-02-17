@@ -1,0 +1,233 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Pending Approval List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="maindata">
+    <ion-card   class="fadeInUp" *ngFor="let item of list">
+    
+      <div class="effect">
+        <div class="wrap">
+      <ion-card-header style="text-align: center;margin:0px;padding: 0px;" *ngIf = "item.badge !==''">
+        <p style="text-align: right;" >  <ion-badge color="danger">Urgent</ion-badge></p>
+      </ion-card-header>
+        <p>Approver : {{item.active_approver}}</p>
+        <!-- <p>Asset Type : {{item.asset_type_name}}</p> -->
+        <p>Asset Name : {{item.asset_name}}</p>
+        <p>Raised  By : {{item.emp_name}}</p>
+        <p>Created  At : <ion-badge color="secondary">{{item.created_at}}</ion-badge>   <span>  
+         
+        
+        </span> </p>
+       
+        <ion-button style="float: right; color: black;" slot="end" class="ion-activatable" (click)="view(item)" size="small" color="success" slot="end" fill="solid">
+            
+        Details
+        <ion-ripple-effect></ion-ripple-effect>
+        </ion-button>
+      
+        <!-- <p>Asset Number : {{item.asset_no}}</p>
+        <p>Badge : {{item.badge}}</p>
+        <p>Capex Number : {{item.capex_no}}</p>
+        <p>Raised  By : {{item.emp_name}}</p>
+        <p>Employee  Number : {{item.emp_no}}</p>
+        
+        <p>Expected  Date : {{item.expected_date}}</p>
+        <p>Status : {{item.status}}</p> -->
+      
+      <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button  size="small" >
+          <ion-icon name="navigate"></ion-icon>
+        </ion-fab-button>
+        
+        
+        <ion-fab-list side="start">
+          <ion-fab-button (click)="edit(item)" size="small" color="success">
+            <ion-icon name="md-create"></ion-icon>
+          </ion-fab-button>
+          <ion-fab-button (click)="view(item)" size="small" color="success">
+            <ion-icon name="ios-eye"></ion-icon>
+          </ion-fab-button>
+        </ion-fab-list>
+       
+   
+      </ion-fab> -->
+      <!-- <ion-fab (click)="view(item)" vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button size="small" color="success">
+          <ion-icon name="ios-eye"></ion-icon>
+        </ion-fab-button>
+      </ion-fab> 
+   -->
+      <!-- <ion-fab (click)="edit(item)"  vertical="bottom" horizontal="start" slot="fixed">
+        <ion-fab-button size="small" color="success">
+          <ion-icon name="md-create"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+      <ion-fab (click)="view(item)" vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button size="small" color="success">
+          <ion-icon name="ios-eye"></ion-icon>
+        </ion-fab-button>
+      </ion-fab> -->
+      </div>
+    </div>
+      
+    </ion-card>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div *ngIf="!maindata">
+    <ion-list>
+   
+      <ion-item>
+        <ion-avatar slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-avatar>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+      
+      <ion-item>
+        <ion-avatar slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-avatar>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-avatar slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-avatar>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-avatar slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-avatar>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-avatar slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-avatar>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-avatar slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-avatar>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-avatar slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-avatar>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-avatar slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-avatar>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+  
+    </ion-list>
+  </div>
+ 
+
+</ion-content>
